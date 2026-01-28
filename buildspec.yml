@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 16
+      nodejs:24 
     commands:
       - echo Installing dependencies...
       - npm install
@@ -12,7 +12,9 @@ phases:
       - echo Running tests...
       - npm test
       - echo Packaging Lambda...
-      - npm run package
+      - cp src/index.js 
+      - zip -r build.zip index.js node_modules package.json
+     # - npm run package
   post_build:
     commands:
       - echo Deploying to Lambda...
