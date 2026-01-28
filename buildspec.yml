@@ -14,6 +14,7 @@ phases:
       - npm test
       - echo Packaging Lambda...
       # If index.js is already at repo root, no copy needed
+      - cp src/index.js .
       - zip -r build.zip index.js node_modules package.json
 
   post_build:
