@@ -1,4 +1,4 @@
-const { handler } = require("../index");
+const { handler } = require("../src/index");
 
 test("Lambda handler returns 200 for /health", async () => {
   const event = {
